@@ -21,12 +21,12 @@ Related Links
 ---------  
 
 the luggage :
-  - http://luggage.apesseekingknowledge.net/
+ - http://luggage.apesseekingknowledge.net/
 
 flip.osx : 
-  - https://ccrma.stanford.edu/~craig/utility/flip/
-  - http://flip.darwinports.com/
+ - https://ccrma.stanford.edu/~craig/utility/flip/
+ - http://flip.darwinports.com/
 
 GNU GPL :
-  - http://www.gnu.org/licenses/gpl.html
+ - http://www.gnu.org/licenses/gpl.html
 
