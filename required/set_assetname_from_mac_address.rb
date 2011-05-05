@@ -204,9 +204,11 @@ if process_input_data then
         # Run it a second time (required for some unknowen reason?)
         if setup_name then
             exit 0
+        else
+            exit -1
         end
     else
-        return -1
+        exit -1
     end
 else
     exit -1
