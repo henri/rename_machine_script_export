@@ -20,13 +20,13 @@ Improvements are welcome.
 Related Links
 ---------  
 
-  the luggage :
-    - http://luggage.apesseekingknowledge.net/
-  
-  flip.osx : 
-    - https://ccrma.stanford.edu/~craig/utility/flip/
-    - http://flip.darwinports.com/
-  
-  GNU GPL :
-    - http://www.gnu.org/licenses/gpl.html
+the luggage :
+  - http://luggage.apesseekingknowledge.net/
+
+flip.osx : 
+  - https://ccrma.stanford.edu/~craig/utility/flip/
+  - http://flip.darwinports.com/
+
+GNU GPL :
+  - http://www.gnu.org/licenses/gpl.html
 
