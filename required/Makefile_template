@@ -1,0 +1,7 @@
+include /usr/local/share/luggage/luggage.make
+
+TITLE=rename-machine-from-mac-address
+REVERSE_DOMAIN=XXXXXXXXXXX
+PAYLOAD=pack-script-postflight
+
+
