@@ -1,4 +1,4 @@
-# lbackup_core #
+# rename_machine_script_export #
 
 License: GNU General Public License v3
 
