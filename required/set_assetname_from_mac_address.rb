@@ -42,7 +42,7 @@
 #10:9A:DD:31:58:68	499384
 #10:9A:DD:98:4F:9B	499385
 #10:9A:DD:98:6B:48	499386
-"
+#"
 
 
 # Check we are running as root (if not then exit)
@@ -119,7 +119,11 @@ def process_input_data
                 return false
             else
                 # Calculate the assetname for this system
-                @new_assetname = "#{@location}-#{new_assetnumber.chomp}"
+                if @location != "" then
+                    @new_assetname = "#{@location}-#{new_assetnumber.chomp}"
+                else
+                    @new_assetname = "#{new_assetnumber.chomp}"
+                end
                 return true
             end
         else
