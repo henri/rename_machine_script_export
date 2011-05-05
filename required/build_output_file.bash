@@ -134,6 +134,7 @@ if [ "${package_reverse_domain}" != "" ] ; then
 			echo "             ${package_makefile}"
 			exit -1
 		fi
+		rm -f "${tmp_package_makefile}"
 
 		cd "${package_source_directory}"
 		if [ $? != 0 ] ; then
