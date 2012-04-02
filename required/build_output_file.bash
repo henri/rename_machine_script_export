@@ -9,11 +9,11 @@
 # will attempt to generate an install package for the output script.
 #
 #
-# Script version 1.0
+# Script version 1.1
 #
 #    Script history  
 #       1.0 : initial release
-#
+#       1.1 : fixed issue relating to spaces in path to script
 #
 
 # determine the absolute path to the parent directory to this script
@@ -56,13 +56,14 @@ if ! [ -e "${input_data_file}" ] ; then
 fi
 
 # split the data into two files (we will insert the data between them in a moment).
-split -a 1 -p "-------------INPUT DATA---------------" "${input_script_file}" ${script_split_file_prefix}
+split -a 1 -p "-------------INPUT DATA---------------" "${input_script_file}" "${script_split_file_prefix}"
+
 
 # remove the input data line from the top of the second part of the script
-tail -n +2 "${script_part_b}" > ${tmp_file_for_line_deletion}
+tail -n +2 "${script_part_b}" > "${tmp_file_for_line_deletion}"
 rm "${script_part_b}"
-cp ${tmp_file_for_line_deletion} "${script_part_b}"
-rm ${tmp_file_for_line_deletion}
+cp "${tmp_file_for_line_deletion}" "${script_part_b}"
+rm "${tmp_file_for_line_deletion}"
 
 # okay suggestions on improving that are welcome - it is horrid.
 
