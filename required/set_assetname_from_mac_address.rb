@@ -16,11 +16,12 @@
 # This script is designed to work with Mac OS X
 # 10.6.x and later systems
 #
-# Version 1.1
+# Version 1.2
 
 # History 
 # 1.0 : early version (not working)
 # 1.1 : initial release
+# 1.2 : updates for later versions of ruby
 
 # Interface Name 
 @interface_name="en0"
@@ -60,7 +61,7 @@ def process_input_data
     malformed_entreis_in_data = false
 
     # Parse the input data and insert this data into the mac_to_assetnumber_hash
-    @input_data.each do |input_line|
+    @input_data.split(/\n/).each do |input_line|
         if (input_line != "") && (input_line != "\n") then
             if (input_line.chomp.length > 0) then
                 # line is not empty so lets treat it as input
@@ -153,18 +154,29 @@ end
 
 def setup_name
     
-    # Keeps track of any issues during the configuarion of the machine name.
-    error_setting_computer_name = "NO"
+  # Keeps track of any issues during the configuarion of the machine name.
+  error_setting_computer_name = "NO"
     
-    # Set computer name 
+  # Set computer name 
 	`/usr/sbin/systemsetup -setcomputername "#{@new_assetname.chomp}"`
 	return_code = $?.to_i / 256
 	if return_code != 0 then
 	   puts "ERROR! : Unable to name set computer name using the following command :"
 	   puts "         /usr/sbin/systemsetup -setcomputername \"#{@new_assetname.chomp}\""
-       puts ""
-       error_setting_computer_name = "YES"
-    end
+     puts ""
+     error_setting_computer_name = "YES"
+  end
+
+  # Set computer name 
+	`/usr/sbin/systemsetup -setcomputername "#{@new_assetname.chomp}"`
+	return_code = $?.to_i / 256
+	if return_code != 0 then
+	   puts "ERROR! : Unable to name set computer name using the following command :"
+	   puts "         /usr/sbin/systemsetup -setcomputername \"#{@new_assetname.chomp}\""
+     puts ""
+     error_setting_computer_name = "YES"
+  end
+
 	
 	# Set hostname - Displayed in the termninal
 	`/bin/hostname "#{@new_assetname.chomp}"`
@@ -174,7 +186,7 @@ def setup_name
 	   puts "         /bin/hostname \"#{@new_assetname.chomp}\""
 	   puts ""
 	   error_setting_computer_name = "YES"
-    end
+  end
 	
 	# Set in the systems subnet name
 	`/usr/sbin/systemsetup -setlocalsubnetname "#{@new_assetname.chomp}.local"`
@@ -184,7 +196,7 @@ def setup_name
 	   puts "         /usr/sbin/systemsetup -setlocalsubnetname \"#{@new_assetname.chomp}.local\""
 	   puts ""
 	   error_setting_computer_name = "YES"
-    end
+  end
 
     # Setting the name within the hosts config file is not a requirement in Mac OS X 10.6 so we do not 
     # convern ourselvs with doing this.
